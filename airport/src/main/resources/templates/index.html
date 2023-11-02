@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title></title>
+</head>
+<body> 
+
+	<h3> Welcome to the Airport application.</h3>
+	
+	<ul>
+	<li th:each="airport : ${airports}"> </li>
+	<span th:text=${airport}></span>
+	<span th:text=${airport}></span>
+	<span th:text=${airport}></span>
+	</ul>
+	
+	<form th:object="${newAirport}" method="post" th:action="@{/airport}" >
+	Id:<input th:field="*{id}"/><br/>
+	Name:<input th:field="*{name}"/><br/>
+	IATA:<input th:field="*{iata}"/><br/>
+	<input type="submit" value="Create" />
+	</form>
+	
+</body>
+</html>
